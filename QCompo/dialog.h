@@ -2,6 +2,10 @@
 #define DIALOG_H
 
 #include <QDialog>
+#include <QSettings>
+#include <QVariant>
+#include <QMessageBox>
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Dialog; }
@@ -15,7 +19,15 @@ public:
     Dialog(QWidget *parent = nullptr);
     ~Dialog();
 
+private slots:
+    void on_ComInput_currentIndexChanged(int index);
+
+    void on_BtnApply_clicked();
+
 private:
     Ui::Dialog *ui;
+
+    void init();
+    void load();
 };
 #endif // DIALOG_H
