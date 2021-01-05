@@ -6,6 +6,7 @@ Dialog::Dialog(QWidget *parent)
     , ui(new Ui::Dialog)
 {
     ui->setupUi(this);
+    load();
 }
 
 Dialog::~Dialog()
@@ -13,3 +14,42 @@ Dialog::~Dialog()
     delete ui;
 }
 
+
+void Dialog::on_listWidget_itemSelectionChanged()
+{
+   auto itm = std::make_unique<QListWidgetItem*>(ui->listWidget->currentItem());
+   ui->LblName->setText((*itm)->text());
+   ui->lblImage->setPixmap((*itm)->icon().pixmap(32,32));
+}
+
+void Dialog::on_buttonBox_accepted()
+{
+    accept();
+}
+
+void Dialog::load()
+{
+    QDir dir(":/Icons");
+    scan(dir.entryInfoList());
+    dir.setPath(":/Icons2");
+    scan(dir.entryInfoList());
+}
+
+void Dialog::scan(QFileInfoList list)
+{
+    foreach (QFileInfo info, list)
+        {
+            if(info.isDir())
+            {
+                QDir dir(info.absoluteFilePath());
+                scan(dir.entryInfoList());
+            }
+            else
+            {
+                QListWidgetItem *itm = new QListWidgetItem(ui->listWidget);
+                itm->setText(info.absoluteFilePath());
+                itm->setIcon(QIcon(info.absoluteFilePath()));
+                ui->listWidget->addItem(itm);
+            }
+        }
+}

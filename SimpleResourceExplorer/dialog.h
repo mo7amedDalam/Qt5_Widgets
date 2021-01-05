@@ -2,6 +2,14 @@
 #define DIALOG_H
 
 #include <QDialog>
+#include <memory>
+#include <QFile>
+#include <QDir>
+#include <QListWidgetItem>
+#include <QImage>
+#include <QFileInfo>
+#include <QFileInfoList>
+#include <QDebug>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Dialog; }
@@ -15,7 +23,15 @@ public:
     Dialog(QWidget *parent = nullptr);
     ~Dialog();
 
+private slots:
+    void on_listWidget_itemSelectionChanged();
+
+    void on_buttonBox_accepted();
+
 private:
     Ui::Dialog *ui;
+
+    void load();
+    void scan(QFileInfoList list);
 };
 #endif // DIALOG_H
