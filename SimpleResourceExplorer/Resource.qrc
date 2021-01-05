@@ -1,0 +1,37 @@
+<RCC>
+    <qresource prefix="/Icons">
+        <file>resources/icons1/accept.png</file>
+        <file>resources/icons1/add.png</file>
+        <file>resources/icons1/anchor.png</file>
+        <file>resources/icons1/application_add.png</file>
+        <file>resources/icons1/application_cascade.png</file>
+        <file>resources/icons1/application_delete.png</file>
+        <file>resources/icons1/application_double.png</file>
+        <file>resources/icons1/application_edit.png</file>
+        <file>resources/icons1/application_error.png</file>
+        <file>resources/icons1/application_form.png</file>
+        <file>resources/icons1/application_form_add.png</file>
+        <file>resources/icons1/application_form_delete.png</file>
+        <file>resources/icons1/application_form_edit.png</file>
+        <file>resources/icons1/application_form_magnify.png</file>
+        <file>resources/icons1/application_get.png</file>
+        <file>resources/icons1/application_go.png</file>
+        <file>resources/icons1/application_home.png</file>
+        <file>resources/icons1/application_key.png</file>
+        <file>resources/icons1/application_lightning.png</file>
+        <file>resources/icons1/application_link.png</file>
+        <file>resources/icons1/application_osx.png</file>
+        <file>resources/icons1/application_osx_terminal.png</file>
+        <file>resources/icons1/application_put.png</file>
+        <file>resources/icons1/application_side_boxes.png</file>
+        <file>resources/icons2/drink.png</file>
+        <file>resources/icons2/drink_empty.png</file>
+        <file>resources/icons2/drive.png</file>
+    </qresource>
+    <qresource prefix="/Icons2">
+        <file>resources/icons2/drink.png</file>
+        <file>resources/icons2/dvd_edit.png</file>
+        <file>resources/icons2/dvd_error.png</file>
+        <file>resources/icons2/dvd_go.png</file>
+    </qresource>
+</RCC>
