@@ -6,6 +6,9 @@
 #include <QFile>
 #include <QFileDialog>
 #include <QTextStream>
+#include <QLabel>
+#include <QStatusBar>
+#include <QDebug>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -38,6 +41,8 @@ private slots:
 
     void on_actionToolbar_movable_toggled(bool arg1);
 
+    void on_plainTextEdit_textChanged();
+
 private:
     Ui::MainWindow *ui;
 
@@ -45,5 +50,7 @@ private:
     bool saved;
 
     void wire();
+    void setupStatusBar();
+    void updateStatusBar(QString msg);
 };
 #endif // MAINWINDOW_H
