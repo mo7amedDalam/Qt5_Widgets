@@ -98,7 +98,42 @@ void MainWindow::saveFileAs()
 void MainWindow::selectNone()
 {
     QTextCursor cursor = ui->plainTextEdit->textCursor();
-    cursor.setPosition(0,QTextCursor::MoveMode::KeepAnchor);
+    int pos = cursor.position();
+    cursor.clearSelection();
+    cursor.setPosition(pos,QTextCursor::MoveMode::KeepAnchor);
     ui->plainTextEdit->setTextCursor(cursor);
 }
 
+
+void MainWindow::on_actionToolbar_top_triggered()
+{
+    addToolBar(Qt::ToolBarArea::TopToolBarArea,ui->toolBar);
+}
+
+void MainWindow::on_actionToolbar_bottom_triggered()
+{
+    addToolBar(Qt::ToolBarArea::BottomToolBarArea,ui->toolBar);
+
+}
+
+void MainWindow::on_actionToolbar_left_triggered()
+{
+    addToolBar(Qt::ToolBarArea::LeftToolBarArea,ui->toolBar);
+
+}
+
+void MainWindow::on_actionToolbar_right_triggered()
+{
+    addToolBar(Qt::ToolBarArea::RightToolBarArea,ui->toolBar);
+
+}
+
+void MainWindow::on_actionToolbar_floatable_toggled(bool arg1)
+{
+    ui->toolBar->setFloatable(arg1);
+}
+
+void MainWindow::on_actionToolbar_movable_toggled(bool arg1)
+{
+    ui->toolBar->setMovable(arg1);
+}

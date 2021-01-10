@@ -26,6 +26,18 @@ private slots:
     void saveFileAs();
     void selectNone();
 
+    void on_actionToolbar_top_triggered();
+
+    void on_actionToolbar_bottom_triggered();
+
+    void on_actionToolbar_left_triggered();
+
+    void on_actionToolbar_right_triggered();
+
+    void on_actionToolbar_floatable_toggled(bool arg1);
+
+    void on_actionToolbar_movable_toggled(bool arg1);
+
 private:
     Ui::MainWindow *ui;
 
